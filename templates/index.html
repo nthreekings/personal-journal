@@ -16,7 +16,8 @@
   </div>
 
   <!--Main Content-->
-  <div class="row mb-2 main-content">
+  <div class="container main-content">
+    <div class="row mb-2">
     {% for post in posts|reverse %}
       <div class="col-lg-6">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mt-4 h-md-250 position-relative journal-card">
@@ -30,4 +31,5 @@
       </div>
     {% endfor %}
     </div>
+  </div>
   {% endblock %}
