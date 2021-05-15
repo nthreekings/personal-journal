@@ -1,0 +1,227 @@
+/*
+ * Fonts
+*/
+@font-face {
+  font-family: ProximaNova-Regular;
+  src: url('ProximaNova-Regular.ttf');
+}
+
+@font-face {
+  font-family: ProximaNova-Bold;
+  src: url('ProximaNova-Bold.ttf');
+}
+
+@font-face {
+  font-family: ProximaNovaACond-SemiBold;
+  src: url('ProximaNovaACond-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: NoeDisplay-Bold;
+  src: url('NoeDisplay-Bold.ttf');
+}
+
+@font-face {
+  font-family: NoeDisplay-Medium;
+  src: url('NoeDisplay-Medium.ttf');
+}
+
+@font-face {
+  font-family: NoeDisplay-Regular;
+  src: url('NoeDisplay-Regular.ttf');
+}
+
+/*
+ * Sidebar
+*/
+
+.sidebar {
+    position: fixed;
+    background-color: #F8F8F8;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    border-right: 1px solid #131314;
+    top: 1rem;
+    /*box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.5);*/
+  }
+
+@media (max-width: 767.98px) {
+    .sidebar {
+     /* top: 5rem; */
+      border-right: none;
+
+    }
+
+    .sidebar-sticky {
+        padding-top: 1rem;
+    }
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+      position: -webkit-sticky;
+      position: sticky;
+    }
+  }
+
+.social-media {
+  border-bottom: 1px solid #131314;
+}
+
+.social-media-text {
+  font-family: ProximaNova-Regular;
+  font-size: 14px;
+  color: #131314;
+}
+
+/*
+ * Main
+*/
+.main-content {
+  display: flex;
+  min-height: 100vh;
+  flex-grow: 1;
+}
+
+
+/*
+ * Sidebar Right
+*/
+
+.rightbar {
+    position: fixed;
+    background-color: #F8F8F8;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    border-left: 1px solid #131314;
+    top: 2rem;
+}
+
+.journals {
+  border-bottom: 1px solid #131314;
+}
+
+.journals-list {
+  font-size: 14px!important;
+  font-family: ProximaNova-Regular;
+}
+
+/*
+ * Welcome Header
+*/
+
+.welcome-header {
+    border-bottom: 1px solid #131314!important;
+}
+
+.outline-btn {
+  color: #131314;
+  background-color: #F8F8F8;
+  border-color: #131314;
+}
+
+.outline-btn:hover {
+  background-color: #333333;
+  color: #FFF!important;
+}
+
+.btn-new:hover {
+  color: #FFF;
+}
+
+/*
+ * Cards
+*/
+
+.journal-card {
+    transition: box-shadow .3s;
+    border: 1px solid #131314!important;
+    background-color: #F8F8F8;
+}
+
+.journal-card:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.349);
+}
+
+.journal-subtitle {
+  font-size: 16px;
+}
+
+.journal-author {
+  font-size: 16px;
+  font-family: ProximaNova-Regular;
+  color: #131314!important;
+}
+
+.journal-datetime {
+  font-size: 16px;
+  font-family: ProximaNova-Regular;
+}
+
+
+/*
+ * Post Content
+*/
+.post-entry {
+    font-size: 18px;
+}
+
+#sendMessageButton, .p {
+  color: #ffffff;
+  background-color: #131314 ;
+}
+
+#sendMessageButton:hover {
+  color: #ffffff;
+  background-color: #333333 ;
+}
+
+
+/*
+ * Post Heading
+*/
+
+.about-me {
+    width: 50%;
+    height: auto;
+}
+
+/*
+ * Form
+*/
+#addForm {
+  padding: 8px 40px 8px 40px;
+  border: 1px solid #131314;
+}
+
+#addForm .placeholder{
+  font-family: ProximaNova-Regular;
+}
+
+
+/*
+ * Footer
+*/
+.footer-style {
+    border-top: 1px solid #131314!important;
+    background-color: #F8F8F8;
+}
+
+.copyright {
+  font-family: ProximaNova-Regular;
+}

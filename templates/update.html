@@ -1,0 +1,66 @@
+{% extends "base-template.html" %}
+{% block title %}Update - {{post.title}}{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+  <!-- Page Header -->
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom welcome-header">
+    <button type="button" onclick="javascript:history.back()"><span><i class="fa fa-long-arrow-left pr-2" aria-hidden="true"></i></span>Back</button>
+    <div class="btn-group mr-2">
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container pt-3">
+    <div class="row">
+      <div class="col-lg-9 col-md-10 mx-auto">
+        <form name="addForm" id="addForm" method= "POST" action="{{url_for('updatepost') }}" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="hidden" name="post_id" value="{{post.doc_id}}">
+              <input type="text" class="form-control" placeholder="Title" name="title" id="title" required data-validation-required-message="Please insert your title." value="{{post.title}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Subtitle</label>
+              <input type="text" class="form-control" placeholder="Subtitle" name="subtitle" id="subtitle" required data-validation-required-message="Please insert your subtitle." value="{{post.subtitle}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Author</label>
+              <input type="text" class="form-control" placeholder="Author" name="author" id="author" required data-validation-required-message="Please enter your name. " value="{{post.author}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Entry</label>
+              <textarea rows="5" class="form-control ckeditor" id="editor2" placeholder="Entry" name="entry" required data-validation-required-message="Please insert your entry.">{{post.entry}}</textarea>
+              <script>
+                CKEDITOR.replace( 'editor2' );
+              </script>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          
+          <br>
+          <div id="success"></div>
+          <div class="form-group">
+            <button type="submit" class="btn" id="sendMessageButton">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

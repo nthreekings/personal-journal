@@ -1,0 +1,33 @@
+{% extends "base-template.html" %}
+{% block title %}Journal{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <!-- Page Header -->
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom welcome-header">
+    <h2>Hello, Nichole!</h2>
+    <div class="btn-toolbar mb-2 mb-md-0 d-none d-sm-block">
+        <button type="button" class="btn btn-sm outline-btn"><a class="nav-link btn-new" href="{{ url_for('add')}}"><span><i class="fa fa-plus pr-2" aria-hidden="true"></i></span>Add New Post</a></button>
+    </div>
+    <div class="btn-toolbar mb-2 mb-md-0 d-block d-sm-none">
+      <button type="button" class="btn btn-sm outline-btn"><a class="nav-link btn-new" href="{{ url_for('add')}}"><span><i class="fa fa-plus" aria-hidden="true"></i></span></a></button>
+  </div>
+  </div>
+
+  <!--Main Content-->
+  <div class="row mb-2 main-content">
+    {% for post in posts|reverse %}
+      <div class="col-lg-6">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mt-4 h-md-250 position-relative journal-card">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-2">{{post.title}}</h3>
+            <p class="journal-author">{{post.author}}</p>
+            <p class="d-inline-block font-italic journal-datetime">{{post.datetime}}</p>
+            <a href="{{ url_for('post', post_id=post.doc_id)}}" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  {% endblock %}
